@@ -1,0 +1,96 @@
+h1 プロフィール編集画面
+
+
+
+= link_to '事務所情報登録' , new_edit_profile_path, class: 'btn btn-primary'
+- @edit_profiles.each do |edit_profile|
+  tr
+    td
+      = link_to '編集', edit_edit_profile_path(edit_profile), class: 'btn btn-primary mr-3'
+      = link_to '削除', edit_profile, method: :delete, data: { confirm: "タスク「#{edit_profile.surname}」を削除します。よろしいですか？"},
+      class: 'btn btn-danger'
+
+.mb-3
+table.table.table-hover
+  thead.thead-default
+
+    tbody
+      - @edit_profiles.each do |edit_profile|
+
+        tr
+          th= EditProfile.human_attribute_name(:office_name)
+          td= link_to edit_profile.office_name, edit_profile
+          td
+
+        tr
+          th= EditProfile.human_attribute_name(:office_id)
+          td= link_to edit_profile.office_id, edit_profile
+          td
+
+        tr
+          th= EditProfile.human_attribute_name(:surname)
+          td= link_to edit_profile.surname, edit_profile
+          td
+
+        tr
+          th= EditProfile.human_attribute_name(:lastname)
+          td= link_to edit_profile.lastname, edit_profile
+          td
+
+        tr
+          th= EditProfile.human_attribute_name(:position)
+          td= link_to edit_profile.position, edit_profile
+          td
+
+        tr
+          th= EditProfile.human_attribute_name(:postal_cord)
+          td= link_to edit_profile.postal_cord, edit_profile
+          td
+
+        tr
+          th= EditProfile.human_attribute_name(:address)
+          td= link_to edit_profile.address, edit_profile
+          td
+
+        tr
+          th= EditProfile.human_attribute_name(:average_cost)
+          td= link_to edit_profile.average_cost, edit_profile
+          td
+
+        tr
+          th= EditProfile.human_attribute_name(:phon_number)
+          td= link_to edit_profile.phon_number, edit_profile
+          td
+
+        tr
+          th= EditProfile.human_attribute_name(:architect_concept)
+          td= link_to edit_profile.architect_concept, edit_profile
+          td
+
+        tr
+          th= EditProfile.human_attribute_name(:office_url)
+          td= link_to edit_profile.office_url, edit_profile
+          td
+
+
+h1 作品一覧
+= link_to '新規登録' , new_edit_architecture_path, class: 'btn btn-primary'
+.mb-3
+table.table.table-hover
+  thead.thead-default
+
+    tr
+      th= EditArchitecture.human_attribute_name(:architect_title)
+      th= EditArchitecture.human_attribute_name(:architect_comment)
+      th= EditArchitecture.human_attribute_name(:image)
+      th
+    tbody
+      - @edit_architectures.each do |edit_architecture|
+        tr
+          td= link_to edit_architecture.architect_title, edit_architecture
+          td= edit_architecture.architect_comment
+          td= image_tag edit_architecture.image if edit_architecture.image.attached?
+          td
+            = link_to '編集', edit_edit_architecture_path(edit_architecture), class: 'btn btn-primary mr-3'
+            = link_to '削除', edit_architecture, method: :delete, data: { confirm: "タスク「#{edit_architecture.architect}」を削除します。よろしいですか？"},
+            class: 'btn btn-danger'

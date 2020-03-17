@@ -1,0 +1,2 @@
+module ArchitectureListHelper
+end

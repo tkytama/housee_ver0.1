@@ -1,0 +1,6 @@
+h1 建築作品の登録
+
+.nav.justify-content-end
+  = link_to '一覧', edit_profiles_path, class: 'nav-link'
+
+= render partial: 'form', locals: { edit_room: @edit_room}

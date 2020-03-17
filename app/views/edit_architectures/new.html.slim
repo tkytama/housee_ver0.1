@@ -1,0 +1,5 @@
+h1 プロジェクトの追加・編集
+nav.justify-content-end
+  = link_to '一覧', edit_profiles_path, class: 'nav-link'
+
+= render partial: 'form', locals: { edit_architecture: @edit_architecture}

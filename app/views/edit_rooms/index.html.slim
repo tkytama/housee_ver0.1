@@ -1,0 +1,19 @@
+1 作品一覧
+= link_to '新規登録' , new_edit_room_path, class: 'btn btn-primary'
+.mb-3
+table.table.table-hover
+  thead.thead-default
+
+    tr
+      th= EditArchitecture.human_attribute_name(:architect_title)
+      th= EditArchitecture.human_attribute_name(:architect_comment)
+      th
+    tbody
+      - @edit_rooms.each do |edit_room|
+        tr
+          td= link_to edit_room.architect_title, edit_room
+          td= edit_room.architect_comment
+          td
+            = link_to '編集', edit_edit_room_path(edit_room), class: 'btn btn-primary mr-3'
+            = link_to '削除', edit_room, method: :delete, data: { confirm: "タスク「#{edit_room.architect}」を削除します。よろしいですか？"},
+            class: 'btn btn-danger'

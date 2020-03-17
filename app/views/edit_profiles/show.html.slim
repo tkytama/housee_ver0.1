@@ -1,0 +1,45 @@
+h1 タスクの詳細
+
+.nav.justify-content-end
+  = link_to '一覧', edit_profiles_path, class: 'nav-link'
+table.table.table-hover
+  tbody
+    tr
+      th= EditProfile.human_attribute_name(:id)
+      th= @edit_profile.id
+    tr
+      th= EditProfile.human_attribute_name(:office_name)
+      td= @edit_profile.office_name
+    tr
+      th= EditProfile.human_attribute_name(:surname)
+      td= simple_format(h(@edit_profile.surname), {}, sanitize: false, wrapper_tag: "div")
+    tr
+      th= EditProfile.human_attribute_name(:lastname)
+      td= @edit_profile.lastname
+    tr
+      th= EditProfile.human_attribute_name(:position)
+      td= @edit_profile.position
+
+    tr
+      th= EditProfile.human_attribute_name(:postal_cord)
+      td= @edit_profile.postal_cord
+    tr
+      th= EditProfile.human_attribute_name(:address)
+      td= simple_format(h(@edit_profile.address), {}, sanitize: false, wrapper_tag: "div")
+    tr
+      th= EditProfile.human_attribute_name(:average_cost)
+      td= @edit_profile.average_cost
+    tr
+      th= EditProfile.human_attribute_name(:phon_number)
+      td= @edit_profile.phon_number
+
+    tr
+      th= EditProfile.human_attribute_name(:architect_concept)
+      td= @edit_profile.architect_concept
+    tr
+      th= EditProfile.human_attribute_name(:office_url)
+      td= @edit_profile.office_url
+
+= link_to '編集', edit_edit_profile_path, class: 'btn btn-primary mr-3'
+= link_to '削除', @edit_profile, method: :delete, data: { confirm: "タスク「#{@edit_profile.surname}」を削除します。よろしいですか？"},
+class: 'btn btn-danger'

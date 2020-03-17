@@ -1,0 +1,2 @@
+module EditArchitecturesHelper
+end

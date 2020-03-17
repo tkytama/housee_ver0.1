@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ArchitecturalFirm: MyString
+  FirmCode: 1
+  ArchitectName: MyString
+  ArchitectPosition: MyString
+  Firmcode: 1
+
+two:
+  ArchitecturalFirm: MyString
+  FirmCode: 1
+  ArchitectName: MyString
+  ArchitectPosition: MyString
+  Firmcode: 1

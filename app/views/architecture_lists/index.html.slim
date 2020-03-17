@@ -1,0 +1,16 @@
+h1 建築家一覧
+
+
+table.table.table-hover
+  tbody
+
+    - User.all.each do |architect|
+      - architect.edit_profiles.each do |edit_profile|
+        tr
+          td= edit_profile.office_name
+          td= edit_profile.architect_concept
+          td= edit_profile.address
+      - architect.edit_architectures.each do |edit_architecture|
+          td= image_tag edit_architecture.image if edit_architecture.image.attached?
+      
+      tr

@@ -1,0 +1,39 @@
+- if edit_profile.errors.present?
+  ul#error_explanation
+    - edit_profile.errors.full_messages.each do |message|
+    li= message
+
+= form_with model: edit_profile, local: true do |f|
+  .form-group
+    = f.label :office_name
+    = f.text_field :office_name, class: 'form-control', id: 'edit_profiles_office_name'
+  .form-group
+    = f.label :surname
+    = f.text_field :surname, class: 'form-control', id: 'edit_profile_surname'
+  .form-group
+    = f.label :lastname
+    = f.text_field :lastname, class: 'form-control', id: 'edit_profile_lastname'
+  .form-group
+    = f.label :position
+    = f.text_field :position, class: 'form-control', id: 'edit_profile_position'
+  .form-group
+    = f.label :postal_cord
+    = f.text_field :postal_cord, class: 'form-control', id: 'edit_profile_postal_cord'
+  .form-group
+    = f.label :address
+    = f.text_field :address, class: 'form-control', id: 'edit_profile_address'
+  .form-group
+    = f.label :average_cost
+    = f.text_field :average_cost, class: 'form-control', id: 'edit_profile_average_cost'
+  .form-group
+    = f.label :phon_number
+    = f.text_field :phon_number, class: 'form-control', id: 'edit_profile_phon_number'
+  .form-group
+    = f.label :architect_concept
+    = f.text_area :architect_concept, rows: 5, class: 'form-control', id: 'edit_profile_office_id'
+  .form-group
+    = f.label :office_url
+    = f.text_field :office_url, class: 'form-control', id: 'edit_profile_office_url'
+
+
+  = f.submit nil, class: 'btn btn-primary'

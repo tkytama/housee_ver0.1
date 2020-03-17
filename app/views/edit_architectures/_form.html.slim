@@ -1,0 +1,28 @@
+
+= form_with model: edit_architecture, local: true do |f|
+  .form-group
+    = f.label :architect
+    = f.text_field :architect, class: 'form-control', id: 'edit_room_architect'
+  .form-group
+    = f.label :architect_title
+    = f.text_field :architect_title, class: 'form-control', id: 'edit_room_architect'
+  .form-group
+    = f.label :architect_comment
+    = f.text_area :architect_comment, rows: 5, class: 'form-control', id: 'edit_room_architecture_title'
+  .form-group
+    = f.label :completion_year
+    = f.text_field :completion_year, class: 'form-control', id: 'edit_profile_completion_year'
+  .form-group
+    = f.label :completion_month
+    = f.text_area :completion_month, rows: 5, class: 'form-control', id: 'edit_profile_completion_month'
+  .form-group
+    = f.label :address
+    = f.text_field :address, class: 'form-control', id: 'edit_room_architecture'
+  .form-group
+    = f.label :edit_profile_id
+    = f.text_field :edit_profile_id, class: 'form-control', id: 'edit_profile_id'
+  .form-group
+    = f.label :image
+    = f.file_field :image, class: 'form-control'
+
+  = f.submit nil, class: 'btn btn-primary'

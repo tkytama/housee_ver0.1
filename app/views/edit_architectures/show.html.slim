@@ -1,0 +1,52 @@
+h1 プロジェクトの詳細
+.nav.justify-content-end
+  = link_to '一覧', edit_profiles_path, class: 'nav-link'
+table.table.table-hover
+  tbody
+    tr
+      th= EditArchitecture.human_attribute_name(:id)
+      th= @edit_architecture.id
+    tr
+      th= EditArchitecture.human_attribute_name(:architect)
+      td= @edit_architecture.architect
+    tr
+      th= EditArchitecture.human_attribute_name(:architect_title)
+      td= @edit_architecture.architect_title
+    tr
+      th= EditArchitecture.human_attribute_name(:completion_year)
+      td= @edit_architecture.completion_year
+    tr
+      th= EditArchitecture.human_attribute_name(:completion_month)
+      td= @edit_architecture.completion_month
+    tr
+      th= EditArchitecture.human_attribute_name(:address)
+      td= @edit_architecture.address
+
+h1 建築作品の登録
+= link_to '新規登録' , new_edit_room_path, class: 'btn btn-primary'
+.mb-3
+table.table.table-hover
+  thead.thead-default
+
+    tr
+      th= EditRoom.human_attribute_name(:architect_title)
+      th= EditRoom.human_attribute_name(:architect_comment)
+      th
+    tbody
+    - @edit_rooms.each do |edit_room|
+      tr
+        td= link_to edit_room.architect_title, edit_room
+        td= edit_room.architect_comment
+        td
+          = link_to '編集', edit_edit_room_path(edit_room), class: 'btn btn-primary mr-3'
+          = link_to '削除', edit_room, method: :delete, data: { confirm: "タスク「#{edit_room.architect}」を削除します。よろしいですか？"},
+          class: 'btn btn-danger'
+
+
+
+
+
+
+= link_to '編集', edit_edit_architecture_path, class: 'btn btn-primary mr-3'
+= link_to '削除', @edit_architecture, method: :delete, data: { confirm: "タスク「#{@edit_architecture.architect}」を削除します。よろしいですか？"},
+class: 'btn btn-danger'

@@ -1,0 +1,15 @@
+
+= form_with model: edit_room, local: true do |f|
+  .form-group
+    = f.label :room_title
+    = f.text_field :room_title, class: 'form-control', id: 'edit_room_room_title'
+  .form-group
+    = f.label :room_comment
+    = f.text_area :room_comment, rows: 5, class: 'form-control', id: 'edit_room_room_comment'
+  .form-group
+    = f.label :completion_year
+    = f.text_field :completion_year, class: 'form-control', id: 'edit_profile_completion_year'
+  .form-group
+    = f.label :completion_month
+    = f.text_area :completion_month, rows: 5, class: 'form-control', id: 'edit_profile_completion_month'
+  = f.submit nil, class: 'btn btn-primary'
