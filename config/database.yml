@@ -78,8 +78,17 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+#以下コメントアウト20200321
+# production:
+#   <<: *default
+#   database: housee_ver0_1_production
+#   username: housee_ver0_1
+#   password: <%= ENV['HOUSEE_VER0_1_DATABASE_PASSWORD'] %>
 production:
-  <<: *default
+  adapter: Postgresql
+  encoding: utf8
+  pool: 5
   database: housee_ver0_1_production
-  username: housee_ver0_1
-  password: <%= ENV['HOUSEE_VER0_1_DATABASE_PASSWORD'] %>
+  username: root
+  password root: Ito@1369
+  socket: /var/lib/
