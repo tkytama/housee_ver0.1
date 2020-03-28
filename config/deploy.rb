@@ -1,5 +1,5 @@
 # capistranoのバージョン固定
-lock "~> 3.10.1"
+lock "~> 3.12.1"
 
 # デプロイするアプリケーション名
 set :application, 'housee_ver0.1'
