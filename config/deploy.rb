@@ -52,6 +52,7 @@ namespace :deploy do
                 # userとpasswordはmysqlの設定に合わせて
                 #
                 execute "sudo service postgresql start"
+                execute "sudo su postgres -c 'createuser -s Housee"
 
         end
       end
