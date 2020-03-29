@@ -1,24 +1,16 @@
-# README
+概要
+建築家とユーザーをマッチングするBtoCサービスである。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+機能一覧
 
-* Ruby version
+・記事投稿機能
+・認証機能
+・ページネーション機能
 
-* System dependencies
+使用している技術
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+・インフラ             -ConoHa
+・データベース       -postgreSQL
+・画像アップロード -Active Storage
+・デプロイ             -capistrano
