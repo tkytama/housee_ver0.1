@@ -1,5 +1,5 @@
 # capistranoのバージョン固定
-lock "~> 3.12.1"
+lock "~> 3.10.1"
 
 # デプロイするアプリケーション名
 set :application, 'housee_ver0.1'
@@ -50,7 +50,8 @@ namespace :deploy do
                   sql = "CREATE DATABASE IF NOT EXISTS hoge_app_production;"
                   # クエリの実行。
                 # userとpasswordはmysqlの設定に合わせて
-                execute "mysql --user=root --password=root -e '#{sql}'"
+                #
+                execute "sudo service postgresql start"
 
         end
       end
