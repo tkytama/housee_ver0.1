@@ -53,6 +53,7 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
+  gem 'spring-commands-rspec'
 end
 
 group :production, :staging do
