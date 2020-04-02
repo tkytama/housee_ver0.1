@@ -1,17 +1,20 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  it "is valid with a lastname, email, and password" do
+  it "is valid with a surname, email, and lastname" do
     user = User.new(
-      lastname:  "Sumner",
+      surname:  "Sumner",
+      lastname: "Yosio",
+      date_of_birth: "19941130",
+      password: "111111",
       email:      "tester@example.com",
     )
-    expect(user).to_not be_valid
+    expect(user).to be_valid
   end
-  it "is invalid without a lastname" do
-    user = User.new(lastname:nil)
-    user.valid?
-    expect(user.errors[:lastname]).to_not include("can't be blank")
+  it "is invalid without a surname" do
+    user2 = User.new(surname: nil)
+    user2.valid?
+    expect(user2.errors[:surname]).to include("を入力してください")
   end
 
   it "is invalid without a first name"
