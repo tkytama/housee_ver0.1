@@ -23,4 +23,25 @@ RSpec.describe User, type: :model do
   it "is invalid with a duplicate email address"
 
   it "returns a user's full name as a string"
+
+  it "is invalid with a duplicate email address" do
+    User.create(
+      first_name: "Joe",
+      last_name: "Tester",
+      email: "tester@example.com",
+      password: "dottle-noubeau-pabilion-tights-furze"
+    )
+    user = User.new(
+      first_name: "Jane",
+      last_name: "Tester",
+      email: "tester@example.com",
+      password: "dottle-noubeau-pavilion-tights-furze,"
+    )
+    user.valid?
+    expect(user.errors[:email]).to include("has already been taken")
+  end
+
+
+
+
 end
