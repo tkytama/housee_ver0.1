@@ -29,19 +29,19 @@ RSpec.describe User, type: :model do
 
   it "is invalid with a duplicate email address" do
     User.create(
-      first_name: "Joe",
-      last_name: "Tester",
+      surname: "Jane",
+      lastname: "Tester",
       email: "tester@example.com",
-      password: "dottle-noubeau-pabilion-tights-furze"
+      password: "dottle-noubeau-pavilion-tights-furze,"
     )
     user = User.new(
-      first_name: "Jane",
-      last_name: "Tester",
+      surname: "Jane",
+      lastname: "Tester",
       email: "tester@example.com",
       password: "dottle-noubeau-pavilion-tights-furze,"
     )
     user.valid?
-    expect(user.errors[:email]).to include("has already been taken")
+    expect(user.errors[:email]).to include("はすでに存在します")
   end
 
 
