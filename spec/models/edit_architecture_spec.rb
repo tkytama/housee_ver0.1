@@ -35,7 +35,7 @@ RSpec.describe EditArchitecture, type: :model do
       architect: "Test Project",
 	    edit_profile_id: 1,
     )
-    other_user = User.crete(
+    other_user = User.create(
       surname: "Jane",
       lastname: "Tester",
       email: "joetester@example.com",
