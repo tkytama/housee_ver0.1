@@ -7,4 +7,7 @@ class User < ApplicationRecord
   has_many :edit_profiles
   has_many :edit_architectures
   has_many :edit_rooms
+  def name
+    [surname, lastname].join(' ')
+  end
 end
