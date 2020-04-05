@@ -30,5 +30,11 @@ it "returns edit_rooms that match the search term" do
 
   expect(EditRoom.search("first")).to include(note1, note3)
   expect(EditRoom.search("first")).to_not include(note2)
+  expect(EditRoom.search("room_comment")).to be_empty
   end
+
+
+
+
+
 end
