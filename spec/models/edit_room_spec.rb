@@ -15,27 +15,7 @@ RSpec.describe EditRoom, type: :model do
       edit_profile_id: 1,
     )
   end
-<<<<<<< HEAD
-it "returns edit_rooms that match the search term" do
 
-
-  note1 = @project.edit_rooms.create(
-    room_comment: "This is the first note.",
-    user_id: @project.user_id
-  )
-  note2 = @project.edit_rooms.create(
-    room_comment: "This is the second note.",
-    user_id: @project.user_id
-  )
-  note3 = @project.edit_rooms.create(
-    room_comment: "First, preheat the oven.",
-    user_id: @project.user_id
-  )
-
-  expect(EditRoom.search("first")).to include(note1, note3)
-  expect(EditRoom.search("first")).to_not include(note2)
-  expect(EditRoom.search("room_comment")).to be_empty
-=======
   it "returns edit_rooms that match the search term" do
 
     note1 = @project.edit_rooms.create(
@@ -54,6 +34,6 @@ it "returns edit_rooms that match the search term" do
     expect(EditRoom.search("first")).to include(note1, note3)
     expect(EditRoom.search("first")).to_not include(note2)
     expect(EditRoom.search("room_comment")).to be_empty
->>>>>>> test
+
   end
 end
