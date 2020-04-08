@@ -47,4 +47,9 @@ RSpec.describe EditArchitecture, type: :model do
     edit_architecture.valid?
     expect(edit_architecture.errors[:architect]).to include("を入力してください")
   end
+  it "is invalid without an architect_title" do
+    edit_architecture = EditArchitecture.new(architect_title: nil)
+    edit_architecture.valid?
+    expect(edit_architecture.errors[:architect_title]).to include("を入力してください")
+  end
 end
