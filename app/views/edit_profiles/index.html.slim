@@ -1,17 +1,21 @@
+=stylesheet_link_tag 'edit_profiles'
+
 div class="jumbotron jumbotron-fluid"
   div class="container"
     h1 class ="display-4" プロフィール編集画面
     p class="lead" less is more
 
+p class='margin-l font-50' 〇〇建築事務所
+p class='margin-l font-20' のページ編集画面
 
-= link_to '事務所情報登録' , new_edit_profile_path, class: 'btn btn-primary'
+= link_to '事務所情報登録' , new_edit_profile_path, class: 'btn btn-primary margin-l'
 - @edit_profiles.each do |edit_profile|
   tr
     td
-      = link_to '編集', edit_edit_profile_path(edit_profile), class: 'btn btn-primary mr-3'
+      = link_to '編集', edit_edit_profile_path(edit_profile), class: 'btn btn-primary mr-3 '
       = link_to '削除', edit_profile, method: :delete, data: { confirm: "タスク「#{edit_profile.surname}」を削除します。よろしいですか？"},
       class: 'btn btn-danger'
-
+article
 .mb-3
 table.table.table-hover
   thead.thead-default
@@ -76,7 +80,7 @@ table.table.table-hover
 
 
 h1 作品一覧
-= link_to '新規登録' , new_edit_architecture_path, class: 'btn btn-primary'
+= link_to '新規登録' , new_edit_architecture_path, class: 'btn btn-primary margin-l'
 .mb-3
 table.table.table-hover
   thead.thead-default
