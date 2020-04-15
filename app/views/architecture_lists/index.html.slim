@@ -1,5 +1,9 @@
-h1 建築家一覧
 
+=stylesheet_link_tag 'edit_profiles'
+div class="jumbotron jumbotron-fluid"
+  div class="container"
+    h1 class="display-3" 建築家一覧
+    p class="lead" sample
 
 table.table.table-hover
   tbody
@@ -12,5 +16,5 @@ table.table.table-hover
           td= edit_profile.address
       - architect.edit_architectures.each do |edit_architecture|
           td= image_tag edit_architecture.image if edit_architecture.image.attached?
-      
+
       tr
