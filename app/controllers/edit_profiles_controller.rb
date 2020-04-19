@@ -43,7 +43,7 @@ class EditProfilesController < ApplicationController
   private
 
   def edit_profile_params
-    params.require(:edit_profile).permit(:surname, :office_id, :office_name, :lastname, :position, :postal_cord, :address, :average_cost, :phon_number, :architect_concept, :office_url)
+    params.require(:edit_profile).permit(:surname, :office_id, :office_name, :lastname, :position, :postal_cord, :address, :average_cost, :phon_number, :architect_concept, :office_url, :image)
   end
 
   def edit_room_params
