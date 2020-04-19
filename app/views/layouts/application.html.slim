@@ -12,6 +12,7 @@ html
       .navbar-brand HouseeVer01:
 
       ul.navbar-nav.ml-auto
+        li.nav-item= link_to '建築家一覧', architecture_lists_path, class: 'nav-link'
         - if current_user
           li.nav-item= link_to 'プロフィール編集画面', edit_profiles_path, class: 'nav-link'
           - if current_user.admin?
