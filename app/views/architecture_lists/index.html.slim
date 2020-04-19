@@ -8,21 +8,6 @@ div class="jumbotron jumbotron-fluid"
 table.table.table-hover
   tbody
 
-    - User.all.each do |architect|
-
-
-      - architect.edit_architectures.each do |edit_architecture|
-        td= image_tag edit_architecture.image if edit_architecture.image.attached?
-
-
-      - architect.edit_profiles.each do |edit_profile|
-        tr
-          td= edit_profile.office_name
-        tr
-          td= edit_profile.architect_concept
-          td= edit_profile.address
-
-      tr
 
     - User.all.each do |architect|
       div class="flame-architect"
@@ -32,4 +17,5 @@ table.table.table-hover
         - architect.edit_profiles.each do |edit_profile|
           h4 class="font-30 margin-t" = edit_profile.office_name
           a class="font-20" =edit_profile.architect_concept
-          a class="" =edit_profile.address
+          div class="text-r margin-r-30"
+            a =edit_profile.address
