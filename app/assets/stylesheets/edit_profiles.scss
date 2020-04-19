@@ -5,20 +5,48 @@
 table {
   color:red;
   margin: 0 50px;
+
 }
+
+.test {
+  height: 200px;
+  width: auto;
+  margin: 0 10px;
+  color: red;
+}
+.card-img-top{
+
+}
+
 .btn {
   margin-left: 1px;
+}
+
+.flame-architect {
+  margin: 2em auto;
+  padding: 1em;
+  width: 90%;
+  border-radius: 3px;
+  background-color: #fff; /* 背景色 */
+  border: 1px solid #ccc; /* 枠線 */
 }
 
 
 .margin-l {
   margin-left: 50px;
 }
+
+.margin-t {
+  margin-top: 20px;
+}
 .font-50 {
   font-size: 50px;
 }
 .font-20 {
   font-size: 20px;
+}
+.font-30 {
+  font-size: 30px;
 }
 
 h1 {

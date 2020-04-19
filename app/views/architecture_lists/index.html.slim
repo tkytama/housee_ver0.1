@@ -9,12 +9,27 @@ table.table.table-hover
   tbody
 
     - User.all.each do |architect|
+
+
+      - architect.edit_architectures.each do |edit_architecture|
+        td= image_tag edit_architecture.image if edit_architecture.image.attached?
+
+
       - architect.edit_profiles.each do |edit_profile|
         tr
           td= edit_profile.office_name
+        tr
           td= edit_profile.architect_concept
           td= edit_profile.address
-      - architect.edit_architectures.each do |edit_architecture|
-          td= image_tag edit_architecture.image if edit_architecture.image.attached?
 
       tr
+
+    - User.all.each do |architect|
+      div class="flame-architect"
+        - architect.edit_architectures.each do |edit_architecture|
+          =image_tag edit_architecture.image, class: 'test' if edit_architecture.image.attached?
+
+        - architect.edit_profiles.each do |edit_profile|
+          h4 class="font-30 margin-t" = edit_profile.office_name
+          a class="font-20" =edit_profile.architect_concept
+          a class="" =edit_profile.address
