@@ -12,7 +12,8 @@ table.table.table-hover
     - User.all.each do |architect|
       div class="flame-architect"
         - architect.edit_architectures.each do |edit_architecture|
-          =image_tag edit_architecture.image, class: 'ar-pic' if edit_architecture.image.attached?
+          = link_to architecture_list_path(edit_architecture.id) ,target: "_blank" do
+            = image_tag edit_architecture.image, class: 'ar-pic' if edit_architecture.image.attached?
 
         - architect.edit_profiles.each do |edit_profile|
           p
