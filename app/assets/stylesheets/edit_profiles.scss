@@ -8,14 +8,16 @@ table {
 
 }
 
-.test {
+.ar-pic {
   height: 200px;
   width: auto;
   margin: 0 10px;
   color: red;
 }
-.card-img-top{
-
+.profile-pic{
+  height: 50px;
+  width: auto;
+  margin-top: 30px;
 }
 
 .btn {
@@ -35,6 +37,9 @@ table {
   text-align: right;
 }
 
+.text-b{
+  vertical-align: bottom;
+}
 .margin-l {
   margin-left: 50px;
 }

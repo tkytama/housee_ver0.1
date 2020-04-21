@@ -12,10 +12,12 @@ table.table.table-hover
     - User.all.each do |architect|
       div class="flame-architect"
         - architect.edit_architectures.each do |edit_architecture|
-          =image_tag edit_architecture.image, class: 'test' if edit_architecture.image.attached?
+          =image_tag edit_architecture.image, class: 'ar-pic' if edit_architecture.image.attached?
 
         - architect.edit_profiles.each do |edit_profile|
-          h4 class="font-30 margin-t" = edit_profile.office_name
-          a class="font-20" =edit_profile.architect_concept
+          p
+            a =image_tag edit_profile.image, class: 'profile-pic text-b' if edit_profile.image.attached?
+            a class="font-30 text-b"= edit_profile.office_name
+          p class="font-20 margin-t" =edit_profile.architect_concept
           div class="text-r margin-r-30"
             a =edit_profile.address
