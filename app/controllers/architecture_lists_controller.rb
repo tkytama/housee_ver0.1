@@ -7,6 +7,7 @@ class ArchitectureListsController < ApplicationController
 
   def show
     @architects = EditProfile.all
+    @architecture_list = EditArchitecture.find_by(id: params[:id])
   end
 
 

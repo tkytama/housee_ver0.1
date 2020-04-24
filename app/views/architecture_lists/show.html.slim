@@ -2,12 +2,9 @@
 div class="jumbotron jumbotron-fluid"
   div class="container"
     h1 class="display-3" 建築家一覧
-    p class="lead" sample
-    = image_tag EditArchitecture.find_by(id:10).image, class: 'test'
+= image_tag @architecture_list.image, class: 'ar-pic-500 margin-l-150 '
 
 
-a class="ar-pic margin-l-150" image
 
-h2 class="margin-l-150 margin-t font-30" こだわりのダイニングスペース
-p class="margin-l-150 margin-t font-20" 菱形のダイニングテーブルの椅子ペンダントライトはご主人が一つひとつ組み込んだこだわりのもの。
-p class="margin-l-150 font-20" 座面に黒を使って、落ち着いた雰囲気を作っています。
+h2 class="margin-l-150 margin-t font-30" =@architecture_list.architect_title
+p class="margin-l-150 margin-t font-20" =@architecture_list.architect_comment
