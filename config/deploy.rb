@@ -47,11 +47,11 @@ namespace :deploy do
         within current_path do
                   # データベース作成のsqlセット
                 # データベース名はdatabase.ymlに設定した名前で
-                  sql = "CREATE DATABASE IF NOT EXISTS hoge_app_production;"
+                  sql = "CREATE DATABASE IF NOT EXISTS housee_production;"
                   # クエリの実行。
                 # userとpasswordはmysqlの設定に合わせて
                 #
-                execute "sudo service postgresql start"
+                execute "mysql --user=Housee --password=19931025T@manegi -e '#{sql}'"
 
         end
       end

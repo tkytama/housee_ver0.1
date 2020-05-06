@@ -90,5 +90,5 @@ production:
   pool: 5
   database: housee_production
   username: root
-  password root: Ito@1369
+  password root: 19931025T@manegi
   socket: /var/lib/mysql/mysql.sock
