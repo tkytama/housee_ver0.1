@@ -85,10 +85,10 @@ test:
 #   username: housee_ver0_1
 #   password: <%= ENV['HOUSEE_VER0_1_DATABASE_PASSWORD'] %>
 production:
-  adapter: Postgresql
+  adapter: mysql2
   encoding: utf8
   pool: 5
-  database: housee_ver0_1_production
+  database: housee_production
   username: root
   password root: Ito@1369
-  socket: /var/lib/
+  socket: /var/lib/mysql/mysql.sock
