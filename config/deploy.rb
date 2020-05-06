@@ -51,7 +51,7 @@ namespace :deploy do
                   # クエリの実行。
                 # userとpasswordはmysqlの設定に合わせて
                 #
-                execute "mysql --user=Housee --password=19931025T@manegi -e '#{sql}'"
+                execute "mysql --user=root --password=19931025T@manegi -e '#{sql}'"
 
         end
       end
