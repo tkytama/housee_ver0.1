@@ -30,6 +30,12 @@ set :rbenv_ruby, '2.5.1'
 # 出力するログのレベル。
 set :log_level, :debug
 
+
+set :ssh_options, auth_methods: ['publickey'],
+                  keys: ['~/.ssh/conoha_Housee/id_rsa'],
+                  forward_agent: true # この行を追加しました。
+
+
 # デプロイのタスク
 namespace :deploy do
 
