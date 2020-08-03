@@ -53,7 +53,4 @@ class EditProfilesController < ApplicationController
   def edit_architecture_params
     params.require(:edit_architecture).permit(:architect, :architect_title, :architect_comment, :completion_year, :completion_month, :address, :image)
   end
-
-
-
 end

@@ -1,11 +1,11 @@
 class EditRoomsController < ApplicationController
+  before_action :set_edit_room, only: %i[show edit]
 
   def index
     @edit_rooms = EditRoom.where(user_id: current_user.id)
   end
 
   def show
-    @edit_room = current_user.edit_rooms.find(params[:id])
   end
 
   def new
@@ -13,7 +13,6 @@ class EditRoomsController < ApplicationController
   end
 
   def edit
-    @edit_room = current_user.edit_rooms.find(params[:id])
   end
 
   def update
@@ -39,6 +38,10 @@ class EditRoomsController < ApplicationController
   end
 
   private
+
+  def set_edit_room
+    @edit_room = current_user.edit_rooms.find(params[:id])
+  end
 
   def edit_room_params
     params.require(:edit_room).permit(:room_title, :room_comment, :completion_year, :completion_month)

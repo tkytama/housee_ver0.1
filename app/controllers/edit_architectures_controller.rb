@@ -1,12 +1,12 @@
 class EditArchitecturesController < ApplicationController
-before_action :set_edit_architecture, only: [:show, :edit, :update, :destroy]
+  before_action :set_edit_architecture, only: [:show, :edit, :update, :destroy]
 
   def show
-    @edit_rooms = EditRoom.where(edit_architecture_id: @edit_architecture.id)
+    @edit_rooms = @edit_architecture.edit_rooms
   end
 
   def new
-    @edit_architecture = EditArchitecture.new
+    @edit_architecture = current_user.edit_architectures.build
     @edit_architecture.edit_profile_id = @edit_architecture.user_id
   end
 
@@ -39,13 +39,7 @@ before_action :set_edit_architecture, only: [:show, :edit, :update, :destroy]
     params.require(:edit_architecture).permit(:architect, :architect_title, :architect_comment, :completion_year, :completion_month, :address, :edit_profile_id, :image)
   end
 
-  def edit_room_params
-    params.require(:edit_room).permit(:room_title, :room_comment, :completion_year, :completion_month)
-  end
-
   def set_edit_architecture
     @edit_architecture = current_user.edit_architectures.find(params[:id])
   end
-
-
 end
