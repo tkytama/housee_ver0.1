@@ -1,16 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  it "is valid with a surname, email, and lastname" do
-    user = User.new(
-      surname:  "Sumner",
-      lastname: "Yosio",
-      date_of_birth: "19941130",
-      password: "111111",
-      email:      "tester@example.com",
-    )
-    expect(user).to be_valid
-  end
+  let(:user) { build(:user, surname: 'Sumner', lastname: 'Yosio', date_of_birth: '19941130', password: '111111', email: 'tester@example.com') }
+  subject { user.valid? }
+  it { is_expected.to be_truthy }
+
   it "is invalid without a surname" do
     user2 = User.new(surname: nil)
     user2.valid?
